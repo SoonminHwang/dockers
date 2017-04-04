@@ -13,4 +13,5 @@ ENV PATH="/usr/local/MATLAB/from-host/bin:${PATH}"
 ENTRYPOINT ["matlab", "-logfile /var/log/matlab/matlab.log"]
 
 # default to matlab help
+CMD ["bash"]
 CMD ["-h"]
