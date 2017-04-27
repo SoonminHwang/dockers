@@ -80,6 +80,24 @@ elif [ "$1" == "pspnet" ]; then
 
 	echo -e $DOCKERFILE>PSPNet/Dockerfile
 
+elif [ "$1" == "mxnet" ]; then
+	DOCKERFILE="FROM mxnet/python:gpu\n
+		\n
+		MAINTAINER Soonmin Hwang <smhwang@rcv.kaist.ac.kr>\n
+		\n
+		# 0. Add my account\n		
+		RUN groupadd -r $USER_NAME -g $USER_ID && \ \n
+		\t useradd -u $USER_ID -g $USER_NAME -m -s /bin/bash $USER_NAME && \ \n
+		\t echo 'cd ~' >> /home/$USER_NAME/.bashrc \n
+		\n
+		# 1. INSTALL Basic things\n
+		RUN apt-get update \n
+		RUN apt-get install -y git vim sudo build-essential\n
+		\n
+		RUN [\"/bin/bash\"]"
+
+	echo -e $DOCKERFILE>mxnet/Dockerfile
+
 else
 	echo "Unknown dockerfile."
 fi

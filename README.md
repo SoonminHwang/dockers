@@ -13,11 +13,16 @@
 
 		caffe dependencies
 
+0. MXNet for Resnet-38 segmentation [[Link](https://github.com/itijyou/ademxapp)]
+
+		Ubuntu 14.04 + cuda 8.0 + cudnnv5.1 + mxnet
+
+
 # Usage
 ---
 
 ## Pull docker image
-0. Choose one of these [IMAGE_NAME]: cuda-caffe-matlab, matlab-anaconda-cuda7.0-cudnn4, pspnet
+0. Choose one of these [IMAGE_NAME]: cuda-caffe-matlab, matlab-anaconda-cuda7.0-cudnn4, pspnet, mxnet
 
 		docker pull soonminh/IMAGE_NAME
 
@@ -106,7 +111,7 @@
 				\t -v $MATLAB_LOGS:/var/log/matlab \\n
 				\t --mac-address=$MATLAB_MAC_ADDRESS \\n
 				\t -v ~/workspace:/home/rcvlab/workspace \\n
-                \t -v /mnt/HDD4TB:/mnt/HDD4TB \\n
-                \t -v /media/rcvlab/New4TB:/media/rcvlab/New4TB \\n
+	            \t -v /mnt/HDD4TB:/mnt/HDD4TB \\n
+	            \t -v /media/rcvlab/New4TB:/media/rcvlab/New4TB \\n
 				\t soonminh/pspnet:latest\" >> ~/.bashrc
 			$ source ~/.bashrc
