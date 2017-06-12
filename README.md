@@ -82,9 +82,11 @@
 			$ caffematlabos
 
 ## Tips
+	- Use mount in container (connect network drive)
+			$ sudo nvidia-docker run -it \
+			--cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined $DOCKER_IMAGE_NAME
 
 	- Add your account into sudo group & set password,	
-
 			$ sudo nvidia-docker run -it --name base -u root soonminh/baseenv:mat-py-cuda7.0-cudnn4
 			$ adduser USER_NAME sudo
 			$ passwd USER_NAME
