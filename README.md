@@ -117,3 +117,12 @@
 	            \t -v /media/rcvlab/New4TB:/media/rcvlab/New4TB \\n
 				\t soonminh/pspnet:latest\" >> ~/.bashrc
 			$ source ~/.bashrc
+
+	- If you are struggling with python-unicode problem, see [here](https://github.com/docker-library/python/issues/13)
+		: Check
+		$ python -c "print(chr(0x5555))"
+		On a correctly configured system, it gives:
+		啕
+		Else,
+		$ export LANG=C.UTF-8
+		
